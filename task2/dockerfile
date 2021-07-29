@@ -1,0 +1,11 @@
+# The image should contain a webserver to serve static files that will be hosted in /opt/html 
+FROM httpd:2.4
+COPY ./opt/html /usr/local/apache2/htdocs/
+# The container should run without superuser rights.
+RUN groupadd -g 999 appuser && \
+    useradd -r -u 999 -g appuser appuser && \
+    apt-get update && apt-get install curl
+USER appuser
+#The exposed port should be configurable.
+EXPOSE 80
+
