@@ -5,7 +5,7 @@ Task 3: Solution (Please see the attached architecture)
 
 In order to funnel data coming from ElasticSearch which the Data Science team will use to do their data science stuff,
 I suggest to use Amazon Redshift combined with Amazon S3. 
-Loading data from Elasticsearch to Redshift is extremely difficult as they have a different structure. With the help of Amazon S3, 
+Loading data from Elasticsearch to Redshift is challenging as they have a different structure. With the help of Amazon S3, 
 it is possible to load the data from Elasticsearch to S3 and then, from S3 to Redshift using a COPY command.
 Redshift is a database system built by AWS, based on PostgreSQL but optimised for extremely large data sets. 
 It is designed for "data warehouse" applications, where you want to write complex logical queries against the data.
